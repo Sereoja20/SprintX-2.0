@@ -7,13 +7,14 @@
     <meta name="author" content="Авагян Сергей">
     <meta name="keywords" content="кроссовки измеряющие расстояние">
     <meta name="robots" content="all">
-    <title>PROJECT</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <title>SprintX</title>
+    <link rel="shortcut icon" href="https://avatars.mds.yandex.net/i?id=f56e3ac0bf16331e158d0197f23e777d1de6ef72-9850117-images-thumbs&n=13" type="image/x-icon">
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Silkscreen:wght@400;700&display=swap');
     :root{
         --img-fon: url("http://новый-советский-союз.рф/wp-content/uploads/2021/02/23feb.jpg");
+        --img: url('QC.png');
     }
     *{
    
@@ -112,12 +113,13 @@
         width: 100vw;
         height: 100px;
         border: 5px solid black;
-        margin-left: 0;
+        margin: 0;
         position: relative;
         top: 50px;
         padding: 5%;
-        padding-left: 0;
+        padding-left: 0.5rem;
         padding-top: 0;
+
    
 
     }
@@ -126,22 +128,6 @@
         justify-content: flex-start;
         position: relative;
         top: 55px;
-    }
-    .rect1{  /*Имя разработчиков*/
-        position: relative;
-        top: 5%;
-        left: 1%;
-    }
-    .rect2{  /*Номер главы проекта*/
-        position: relative;
-        top: 10%;
-        left: 1%;
-    }
-    .rect3{  /*Ссылка на телеграмм главного создателя*/
-        position: relative;
-        top: 20%;
-        left: 1%;
-
     }
     .rect8{
         width: 200px;
@@ -161,21 +147,22 @@
         align-items: center;
         font-size: 30px;
     }
+    
 
     
 
     @keyframes i{
         10%{
             background: white;
-            transition: 1s all;
+            transition: 10s all;
         }
         50%{
             background: blue;
-            transition: 1s all;
+            transition: 10s all;
         }
         100%{
             background: red;
-            transition: 1s all;
+            transition: 10s all;
         }
     }
 </style>
@@ -183,8 +170,8 @@
 <header>
     <div class="item1">
         <div class="item2">logo</div>
-        <div class="item3">SprintX</div>
-        <a href="https://t.me/pedsostav2010"><button class="item10">Присоединиться</button></a> <!--Ссылка на телеграмм группу разработчиков-->
+        <div class="item3"><h1>SprintX</h1></div>
+        <a href="https://t.me/project20245"><button class="item10">Присоединиться</button></a> <!--Ссылка на телеграмм группу разработчиков-->
     </div>
 </header>
     <div class="item4">
@@ -223,7 +210,7 @@
     </div>
     <hr>
     <span>
-        <h1>Contacts:</h1>
+        <h2>Contacts:</h2>
     </span>
     <footer>
         <div class="item7">
@@ -250,6 +237,7 @@
                     <p id="img1"></p>
                 </div>
             </section>
+
         </div>
     </footer>
     <script>
@@ -258,15 +246,22 @@
         const heading = document.getElementById('img1');
         var date = new Date();
         var date2 = new Date(2024, 1, 23);
-        var gep = date.getDay();
+        var date3 = new Date(2024, 1, 25);
+        var gep = date.getDate();
         var gep1 = date2.getDate();
-        var discount = date2 - date;
-        if(date == date2){
-            heading.textContent = 'Скидка 20% ';
-            console.log("yes")
+        var gep2 = date3.getDate();
+        var discount = gep1 - gep;
+        var count = gep2 - gep;
+        if(gep == gep1){
+            heading.textContent = 'В честь 23 февраля скидка 20% на кроссовки,успей акция до 25.02.2024г!!!';
         }else{
-            heading.textContent = 'Скидка через столькото дней';
-         
+            heading.textContent = 'Через  '+discount+' дней, действует скидка 20% на кроссовки.';
+        }if(gep1<=gep<=gep3){
+            heading.textContent = 'Поторопись скидка кончится через '+ count+' дней!!';
+        }if(gep>gep2){
+            heading.textContent = '';
+        }if(gep>gep1){
+            heading.textContent = '';
         }
     </script>
 
