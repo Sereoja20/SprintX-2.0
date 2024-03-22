@@ -1,0 +1,10 @@
+body{
+    width: 100%;
+    height: auto;
+    background: skyblue;
+}
+body div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,15 @@
+body{
+    width: 100%;
+    height: auto;
+    font: 5px;
+    background-color: skyblue;
+}
+body div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button{
+    width: 40px;
+    height: 15px;
+}
