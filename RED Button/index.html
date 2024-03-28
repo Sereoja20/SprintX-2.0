@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: auto;
+        background: black;
+    }
+    body button{
+        display: flex;
+        align-items: center;
+    }
+</style>
+<body id="red">
+<button style="width: 360px; 
+    height: 360px; 
+    background: red; 
+    border: 5px double black;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 37.5%;"
+    onclick="play()">
+</button>
+<script src="script.js"></script>
+<script>
+    function play(){
+    audio = new Audio("02868.mp3")
+    audio.play()
+}
+    let user;
+    let user_2 = document.getElementById("red");
+    user = prompt("Введите пароль для входа в ядерный кейс президента:")
+    if (user == 177777777778){
+        alert("ВХОД ПРЕДОСТАВЛЕЙ,ПОЗДРАВЛЯЮ")
+    }else{
+        alert("НЕЗНАКОМЦАМ ВХОД ЗАПРЕЩЁН")
+        user_2.style.opacity = 0;
+        user_2.style.background = "white";
+    }
+</script>
+</body>
+</html>
