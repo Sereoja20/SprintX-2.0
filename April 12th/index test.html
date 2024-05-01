@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Севис кросовок.Кроссовки сами измеряют скорость, и передают иформяцию на почти любое устройство">
+    <meta name="author" content="Авагян Сергей">
+    <meta name="keywords" content="кроссовки измеряющие расстояние">
+    <meta name="robots" content="all">
+    <title>SprintX</title>
+    <link rel="shortcut icon" href="Фон вкладки.png" type="image/x-icon">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Silkscreen:wght@400;700&display=swap');
+    :root{
+        --img: url('QC.png');
+        --statistic:url('Statistick.png');
+    }
+    *{
+   
+        margin: 0;
+        padding: 0;
+        font-family: 'Lobster', sans-serif;
+    
+    }
+    body{
+        width: 100%;
+        height: auto;
+        background: lightblue;
+    }
+    .item1{   /* Главное меню*/
+        width: 100vw;
+        height: 100px;
+        border: 5px black solid;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 1px;
+        background: lightyellow;
+
+
+        
+        
+
+    }
+    .item2{  /*Логотип*/
+        width: 100px;
+        height: 50px;
+        border: 5px black solid;
+        background: lightskyblue;
+    }
+    .item3{  /*Имя сайта*/
+        width: 200px;
+        height: 50px;
+        border: 5px black solid;
+        background: lightskyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .item4{  /*Статистика скорости кроссовок*/
+        width: 98vw;
+        height: 510px;
+        border: 5px black solid;
+        position: absolute;
+        top: 115px;
+        padding: 15px;
+        background: lightyellow; 
+        display: flex;
+        justify-content: center;    
+}
+    .item8{  /*Диаграмма скорости*/
+        width: 850px;
+        height: 500px;
+    }
+    .item5{  /*Фото кроссовок, с устройстовом измерения скорости бега*/
+        width: 800px;
+        height: 500px;
+        border: 5px black solid;
+        background: lightskyblue;
+        margin-right: 100px;
+    }
+    .item9{  /*Контейнер в котором расположены фотография и описание кроссовок*/
+        width: 100vw;
+        height: 600px;
+        border: 5px solid black;
+        margin-top: 555px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        background-color: lightyellow;
+
+
+
+
+    }
+    .item6{  /*описание кроссовок*/
+        width: 800px;
+        height: 500px;
+        border: 5px black solid;
+        background: lightskyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    hr{
+        color: blue;
+        position: relative;
+        top: 25px;
+    }
+    .item7{  /*Подвал сайта(контакты,имена разработчиков, ссылки на их офицыальные телеграмм каналы)*/
+        width: 85.5%;
+        height: 250px;
+        border: 5px solid black;
+        margin: 0;
+        position: relative;
+        top: 50px;
+        padding: 5%;
+        padding-left: 0.5rem;
+        padding-top: 0;
+
+   
+
+    }
+    body span{
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        top: 55px;
+    }
+    .rect8{
+        width: 200px;
+        height: 100px;
+        position:relative;
+        right: 50px;
+    }
+    .exit{
+        position: relative;
+        left: 200px;
+    }
+    .item34{
+        width: 183px;
+        height: 173px;
+    }
+    h1{
+        text-shadow:  black 1px 5px;
+    }
+    @media screen and (width >= 360px) {
+            body{
+                width: 100%;
+                height: auto;
+                background:lightblue;
+
+            }
+            .item1{
+                /* меню */
+
+                position: absolute;
+                width: 405px;
+                height: 111px;
+                left: 0px;
+                top: 0px;
+
+                background: #FFFF99;
+                border-radius: 15px;
+                display: flex;
+                justify-content: space-between;
+
+            }
+            .item2{
+                /* logo */
+
+                position: absolute;
+                width: 70px;
+                height: 31px;
+                left: 5px;
+                top: 42px;
+
+                background: #A4DBE8;
+
+            }
+            .item3{
+                /* name web sait */
+
+                position: absolute;
+                width: 110px;
+                height: 31px;
+                left: 118px;
+                top: 42px;
+
+                background: #A4DBE8;
+
+
+            }
+            .item10{
+                /* Rectangle 4 */
+
+                position: absolute;
+                width: 100px;
+                height: 21px;
+                left: 252px;
+                top: 45px;
+
+                background: #A4DBE8;
+                border-radius: 7px;
+
+            }
+            .item4{
+                width: 375px;
+                height: 275px;
+                position: relative;
+                top: 130px;
+
+            }
+            .item8{
+                /* Статистика */
+
+                position: absolute;
+                width: 390px;
+                height: 275px;
+                left: calc(50% - 390px/2);
+                top: calc(100% - 275px/2 - 153.5px);
+
+                background: var(--statistic);
+
+            }
+            .item9{
+                /* описание и фото кроссовка */
+                width: 395px;
+                height: 213px;
+                background: #FFFF99;
+                position: relative;
+                bottom: 412.5px;
+
+            }
+            .item5{
+                /* фото кроссовка */
+                width: 183px;
+                height: 173px;
+
+
+                background: #A4DBE8;
+
+
+            }
+            .item6{
+                /* Rectangle 5 */
+
+
+                width: 210px;
+                height: 173px;
+
+
+                background: #A4DBE8;
+
+            }
+            .item18{
+                position: relative;
+                top: 270px;
+            }
+            hr{
+                position: relative;
+                top: -400px;
+                left: 10px;
+            }
+
+            footer{
+                position: relative;
+                top: -450px;
+            }
+        } 
+</style>
+<body>
+<header>
+    <div class="item1">
+        <div class="item2">logo</div>
+        <div class="item3"><h1>SprintX</h1></div>
+        <a href="https://t.me/project20245"><button class="item10">Присоединиться</button></a> <!--Ссылка на телеграмм группу разработчиков-->
+    </div>
+</header>
+    <div class="item4">
+        <figure>
+            <img class="item8"  src ="Statistick.png" alt="">
+            <figcaption class="item18">Statistick</figcaption>
+        </figure>
+    </div>
+    <div class="item9">
+        <div class="item5">
+            <img class="item34" src="ustroestvo.jpeg" alt="">
+        </div>
+        <div class="item6"><a href="index2.html">описание</a></div>
+    </div>
+    <hr>
+    <footer>
+        <span>
+            <h2>Contacts:</h2>
+        </span>
+        <div class="item7">
+            <details class="rect1">
+                <summary>
+                    Автор сервиса:
+                </summary>
+                <p>Авагян Сергей</p>
+            </details>
+            <details class="rect2">
+                <summary>
+                    Контакты разработчика:
+                </summary>
+                <p>+7 (996) 955-74-10</p>
+            </details>
+            <details class="rect3">
+                <summary>
+                    Наш телеграмм:
+                </summary>
+                <a href="https://t.me/sere9103jddpn4up45333p3jfdpjph"><img class="rect8" src="https://1000dosok.ru/s/13-06-5456905.jpg" alt="картина не загрузилась"></a>
+            </details>
+            <button class="btn" style="background-color: blue;color: red;"onclick="OnclickButton()">ВВЕСТИ ПРОМОКОД</button>
+            <button class="exit" style="background-color: blue;color: red;width: 45px;height: 30px;" onclick="btn()">exit</button>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
+
+
