@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="shortcut icon" href="https://cdn.onlinewebfonts.com/svg/img_229959.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        *{
+            font-family: "Oswald", sans-serif;
+        }
+        body{
+            width: 100%;
+            height: auto;
+            background: lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        div{
+            background: white;
+            width: 313px;
+            position: relative;
+            top: 45vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Log in</legend>
+            <fieldset>
+                <legend>Email</legend>
+                <input type="email" id="email" required placeholder="Please,write youre email" name="email">
+                <button style="background: darkblue; 
+                color: white;" onclick="gettopassword()">Log in</button>
+            </fieldset>
+        </fieldset>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
