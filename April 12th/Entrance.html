@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance</title>
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/rounded-white-basic-ui/139/Profile01-RoundedWhite-1024.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        *{
+            font-family: "Oswald", sans-serif;
+        }
+        body{
+            width: 100%;
+            height: auto;
+            background: linear-gradient(to right bottom, purple, rgba(8, 130, 182, 0.87));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        div{
+            background: white;
+            width: 313px;
+            position: relative;
+            top: 45vh;
+        }
+        #password{
+            width: 135px;
+        }
+        ul{
+            position: absolute;
+            top: 151px;
+            left: 59px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Entrance</legend>
+            <fieldset>
+                <legend>
+                    <label for="email">Email</label>
+                </legend>
+                <input type="email" id="email" required placeholder="Please,write youre email" name="email">
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <label for="password">Password</label>
+                </legend>
+                <input type="password" id="password"  maxlength="12" required placeholder="Please,write your password" name="password">
+            </fieldset>
+            <button style="background: darkblue; 
+            color: white;
+            position: relative;
+            top: 5px;
+            left: 3px;" onclick="getvalue()"
+            >Entrance</button>
+        </fieldset>
+        <ul>
+            <li><a href="Log in.html">I forgot my password</a></li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
