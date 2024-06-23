@@ -1,0 +1,47 @@
+/* iPhone 14 & 15 Pro Max - 1 */
+
+position: relative;
+width: 430px;
+height: 932px;
+
+background: linear-gradient(168.5deg, #1D9CB8 0.37%, #1D97B8 50.15%, #1C3E97 99.63%);
+
+
+
+/* Group 10 */
+
+position: absolute;
+width: 182px;
+height: 456px;
+left: 53px;
+top: 199px;
+
+
+
+/* Group 8 */
+
+position: absolute;
+width: 182px;
+height: 456px;
+left: 53px;
+top: 199px;
+
+
+
+/* Стих */
+
+position: absolute;
+width: 182px;
+height: 456px;
+left: 53px;
+top: 199px;
+
+font-family: 'Kufam';
+font-style: italic;
+font-weight: 400;
+font-size: 13px;
+line-height: 17px;
+letter-spacing: 0.1em;
+
+color: #312ED4;
+

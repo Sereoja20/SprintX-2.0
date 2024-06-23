@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="АН.jpg" type="image/x-icon">
+    <style>
+        
+        :root{
+            --recizeble:50px;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: auto;
+            background: rgba(41, 160, 199, 0.956);
+        }
+        .img1{
+            position: relative;
+            left: var(--recizeble);
+            top: var(--recizeble);
+            animation: all 1s ease-in-out 1ms infinite;
+        }
+
+        .img2{
+            position: relative;
+            right: var(--recizeble);
+            top: var(--recizeble);
+            animation: all 1s ease-in-out 1ms infinite;
+        }
+        .conteiner{
+            display: flex;
+            justify-content: space-between;
+            
+            
+        }
+        .conter{
+            width: 364px;
+            height: 620px;
+            border: darkblue 5px double;
+            border-radius: 49px;
+            position: relative;
+            top: 50%;
+            left: 37%;
+
+        }
+        .img5 {
+            position: absolute;
+            width: 133px;
+            height: 154px;
+            left: 221px;
+            top: 45px;
+            border-radius: 66.5px;
+            animation: img 1.5s ease-in-out 1ms infinite;
+        }
+        pre{
+            width: 182px;
+            height: 456px;
+            position: relative;
+            left: 40px;
+            top: 25px;
+            animation: font-famili  1.5s ease-in-out 1ms infinite;
+
+            font-family: 'Kufam';
+            font-style: italic;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 17px;
+            letter-spacing: 0.1em;
+
+            color: #312ED4;
+        }
+        .cont{
+            display: flex;
+            justify-content: space-between;
+        }
+        .img3{
+            position: relative;
+            left: var(--recizeble);
+            bottom: var(--recizeble);
+            animation: all 1s ease-in-out 1ms infinite;
+        }
+        .img4{
+            position: relative;
+            right: var(--recizeble);
+            bottom: var(--recizeble);
+            animation: all 1s ease-in-out 1ms infinite;
+        }
+        @keyframes all{
+            1%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.5);
+            }
+        }
+        @keyframes img{
+            1%{
+                transform: scale(0.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+            
+        }
+        @keyframes font-famili{
+            1%{
+                transform: scale(0.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+            
+        }
+        /* @keyframes rect {
+            1%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.5);
+            }
+            
+        } */
+        @media screen and (width < 1200px) {
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                width: 100%;
+                height: auto;
+            }
+            .img1,.img2,.img3,.img4{
+                width: var(--recizeble);
+                height: var(--recizeble);
+
+            }
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="mail">
+    <div class="conteiner">
+        <img src="JS.png" alt="" class="img1">  
+        <img src="PHP.png" alt="" class="img2">
+    </div>
+    <div class="conter">
+        <img src="АН.jpg" alt="" class="img5">
+        <pre>
+            
+Год пролетел, как миг, 
+как песня, как вода, И 
+веб-программирование, 
+познали мы, да-да!
+Антон Яковлевич, наш 
+учитель, друг, Вел нас 
+по тропе, где код
+струится вдруг.
+
+HTML, как каркас, сайт 
+наш строил легко, CSS 
+прибавил красок, чтобы 
+было ярко. JavaScript, 
+как дух, в него вдохнул
+жизнь, И сайт ожил, 
+как сон, что мы с тобой 
+вздохнул.
+
+Спасибо вам за знания,
+за труд, за терпение, 
+За то, что нас учили, с
+любовью и увлечением. 
+Теперь мы строим 
+сайты,свои мечты 
+рисуем, И ваши уроки, 
+как звезды, в памяти 
+сияют.
+
+До свидания, до новых 
+встреч, удачи Вам 
+желаем, И вспомним Вас 
+с теплотой, мы никогда 
+не забываем!
+        </pre> 
+    </div>
+    <div class="cont">
+        <img src="HTML.png" alt="" class="img3">
+        <img src="CSS.png" alt="" class="img4">
+    </div>
+</div>
+    <script>
+        setTimeout(() => alert("See you soon, and thank you for this interesting year, I will never forget it!!!"),5000)
+    </script>
+</body>
+</html>
