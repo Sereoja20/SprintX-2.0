@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <link rel="shortcut icon" href="https://steamuserimages-a.akamaihd.net/ugc/1702908285492599407/BF0B807D4564A1C9020A44A430680933068EBE0F/?imw=512&amp;imh=512&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true" type="image/x-icon">
+    <style>
+        body{
+            width: 100%;
+            height: auto;
+            background: url("https://centrmetrolab.ru/wp-content/uploads/2021/08/time.jpg") no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media screen and (width <= 479px) {
+            h1{
+                position: absolute;
+                 top: 50%;
+                 left: 50%;
+                  transform: translate(-50%, -50%);
+                  border: 2px solid black;
+            }
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">Время</h1>
+    <script>
+                        // minets2 = glob_null + minets2
+                // second2 = glob_null + second2
+                // hourse2 = glob_null + hourse2
+        let glob_null = "0";
+        let h = document.getElementById('h1');
+        function date(){
+            let data = new Date()
+            let hourse = data.getHours()
+            let minets = data.getMinutes()
+            let second = data.getSeconds()
+            let minets2 = String(minets)
+            let second2 = String(second)
+            let hourse2 = String(hourse)
+            if(second2.length == 1){
+                second2 = glob_null + second2
+                let result2 = `${hourse}:${minets}:${second2}`
+                h.textContent = result2
+            }else if (minets2.length == 1){
+                minets2 = glob_null + minets2
+                let result2 = `${hourse}:${minets2}:${second2}`
+                h.textContent = result2
+            }else if (hourse2.length == 1){
+                hourse2 = glob_null + hourse2
+                let result2 = `${hourse2}:${minets2}:${second2}`
+                h.textContent = result2
+            }else{
+                let result2 = `${hourse}:${minets}:${second}`
+                h.textContent = result2
+            }
+        }
+        setInterval(date,1)
+        
+    </script>
+</body>
+</html>
