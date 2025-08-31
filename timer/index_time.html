@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="free-icon.png" type="image/x-icon">
+  <title>Timer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <style>
+    body{
+      margin: 0;
+      padding: 10px;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('backgraund.jpg') ;
+      overflow: hidden;
+      opacity: 0.35;
+
+    }
+    #app{
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      border: black solid 4px;
+      padding: 20px 15px;
+      background: white;
+      box-sizing: border-box;
+    }
+    
+    /* Первый таймер */
+    .timer-container {
+      margin-bottom: 30px;
+    }
+    
+    #rect{
+      width: 100%;
+      height: auto;
+      min-height: 100px;
+      border: black solid 4px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 15px 10px;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-sizing: border-box;
+    }
+    
+    .time-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      min-width: 65px;
+    }
+    
+    #rect1, #rect2, #rect3, #rect4, #rect5{
+      width: 70px;
+      height: 70px;
+      border: black solid 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    
+    .time-label {
+      font-weight: bold;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.1;
+    }
+    
+    h2{
+      font-size: 40px;
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    /* Второй таймер */
+    #rect20{
+      width: 100%;
+      height: auto;
+      min-height: 100px;
+      border: black solid 4px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 15px 10px;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-sizing: border-box;
+    }
+    
+    #rect21, #rect22, #rect23, #rect24, #rect25{
+      width: 70px;
+      height: 70px;
+      border: black solid 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    /* Убираем старые подписи */
+    .rect, .rect1 {
+      display: none;
+    }
+
+    /* Адаптивность для планшетов */
+    @media (max-width: 1024px) {
+      #app {
+        padding: 18px 12px;
+        max-width: 95%;
+      }
+      
+      #rect, #rect20 {
+        padding: 12px 8px;
+        gap: 10px;
+        min-height: 90px;
+      }
+      
+      #rect1, #rect2, #rect3, #rect4, #rect5,
+      #rect21, #rect22, #rect23, #rect24, #rect25 {
+        width: 60px;
+        height: 60px;
+      }
+      
+      h2 {
+        font-size: 35px;
+      }
+      
+      .time-label {
+        font-size: 11px;
+      }
+      
+      .time-block {
+        min-width: 58px;
+        gap: 6px;
+      }
+      
+      .timer-container {
+        margin-bottom: 25px;
+      }
+    }
+
+    /* Адаптивность для небольших планшетов */
+    @media (max-width: 768px) {
+      body {
+        padding: 8px;
+      }
+      
+      #app {
+        padding: 15px 10px;
+        border-width: 3px;
+      }
+      
+      #rect, #rect20 {
+        padding: 10px 6px;
+        gap: 8px;
+        min-height: 80px;
+        border-width: 3px;
+      }
+      
+      #rect1, #rect2, #rect3, #rect4, #rect5,
+      #rect21, #rect22, #rect23, #rect24, #rect25 {
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+      }
+      
+      h2 {
+        font-size: 28px;
+      }
+      
+      .time-label {
+        font-size: 10px;
+      }
+      
+      .time-block {
+        gap: 5px;
+        min-width: 48px;
+      }
+      
+      .timer-container {
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Адаптивность для мобильных */
+    @media (max-width: 600px) {
+      body {
+        padding: 6px;
+      }
+      
+      #app {
+        padding: 12px 8px;
+        border-width: 2px;
+        max-width: 98%;
+      }
+      
+      #rect, #rect20 {
+        border-width: 2px;
+        padding: 8px 4px;
+        gap: 6px;
+        min-height: 70px;
+      }
+      
+      #rect1, #rect2, #rect3, #rect4, #rect5,
+      #rect21, #rect22, #rect23, #rect24, #rect25 {
+        width: 42px;
+        height: 42px;
+        border-width: 2px;
+      }
+      
+      h2 {
+        font-size: 24px;
+      }
+      
+      .time-label {
+        font-size: 9px;
+      }
+      
+      .time-block {
+        gap: 4px;
+        min-width: 40px;
+      }
+      
+      .timer-container {
+        margin-bottom: 18px;
+      }
+    }
+
+    /* Адаптивность для очень маленьких телефонов */
+    @media (max-width: 480px) {
+      body {
+        padding: 4px;
+      }
+      
+      #app {
+        padding: 10px 6px;
+        border-width: 2px;
+      }
+      
+      #rect, #rect20 {
+        border-width: 2px;
+        padding: 6px 3px;
+        gap: 4px;
+        min-height: 60px;
+      }
+      
+      #rect1, #rect2, #rect3, #rect4, #rect5,
+      #rect21, #rect22, #rect23, #rect24, #rect25 {
+        width: 35px;
+        height: 35px;
+        border-width: 2px;
+      }
+      
+      h2 {
+        font-size: 20px;
+        margin: 0 1px;
+      }
+      
+      .time-label {
+        font-size: 8px;
+      }
+      
+      .time-block {
+        gap: 3px;
+        min-width: 34px;
+      }
+      
+      .timer-container {
+        margin-bottom: 15px;
+      }
+    }
+
+    /* Адаптивность для экстремально маленьких устройств */
+    @media (max-width: 360px) {
+      body {
+        padding: 3px;
+      }
+      
+      #app {
+        padding: 8px 4px;
+      }
+      
+      #rect, #rect20 {
+        padding: 5px 2px;
+        gap: 3px;
+        min-height: 55px;
+      }
+      
+      #rect1, #rect2, #rect3, #rect4, #rect5,
+      #rect21, #rect22, #rect23, #rect24, #rect25 {
+        width: 30px;
+        height: 30px;
+      }
+      
+      h2 {
+        font-size: 16px;
+        margin: 0 1px;
+      }
+      
+      .time-label {
+        font-size: 7px;
+      }
+      
+      .time-block {
+        min-width: 30px;
+        gap: 2px;
+      }
+    }
+
+    /* Горизонтальная ориентация */
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        padding: 5px;
+      }
+      
+      #app {
+        padding: 10px;
+        max-height: 95vh;
+      }
+      
+      .timer-container {
+        margin-bottom: 15px;
+      }
+      
+      #rect, #rect20 {
+        min-height: 70px;
+        padding: 8px;
+      }
+    }
+
+    /* Предотвращение скролла */
+    html, body {
+      max-height: 100vh;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <!-- Первый таймер -->
+  <div class="timer-container">
+    <div id="rect">
+      <div class="time-block">
+        <div id="rect1">
+          <h2 id="h2_1"></h2>
+        </div>
+        <span class="time-label"><b>месяцев</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect2">
+          <h2 id="h2_2"></h2>
+        </div>
+        <span class="time-label"><b>дней</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect3">
+          <h2 id="h2_3"></h2>
+        </div>
+        <span class="time-label"><b>часов</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect4">
+          <h2 id="h2_4"></h2>
+        </div>
+        <span class="time-label"><b>минут</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect5">
+          <h2 id="h2_5"></h2>
+        </div>
+        <span class="time-label"><b>секунд</b></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Второй таймер -->
+  <div class="timer-container">
+    <div id="rect20">
+      <div class="time-block">
+        <div id="rect21">
+          <h2 id="h2_11"></h2>
+        </div>
+        <span class="time-label"><b>месяцев</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect22">
+          <h2 id="h2_22"></h2>
+        </div>
+        <span class="time-label"><b>дней</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect23">
+          <h2 id="h2_33"></h2>
+        </div>
+        <span class="time-label"><b>часов</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect24">
+          <h2 id="h2_44"></h2>
+        </div>
+        <span class="time-label"><b>минут</b></span>
+      </div>
+      <h2>:</h2>
+      <div class="time-block">
+        <div id="rect25">
+          <h2 id="h2_55"></h2>
+        </div>
+        <span class="time-label"><b>секунд</b></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Старые подписи скрыты -->
+<div class="rect" style="display: none;">
+  <span><b>месяцев</b></span>
+  <span><b>дней</b></span>
+  <span><b>часов</b></span>
+  <span><b>минут</b></span>
+  <span><b>секунд</b></span>
+</div>
+
+<div class="rect1" style="display: none;">
+  <span><b>месяцев</b></span>
+  <span><b>дней</b></span>
+  <span><b>часов</b></span>
+  <span><b>минут</b></span>
+  <span><b>секунд</b></span>
+</div>
+
+<script>
+  // Функция для добавления ведущего нуля
+  function formatNumber(num) {
+    return num < 10 ? '0' + num : num;
+  }
+
+  function Now_Day() {
+    const now = moment();
+    const Day = moment('2025-10-02');
+    const Day1 = moment('2026-04-13');
+    
+    const dure = moment.duration(Day.diff(now));
+    const dure1 = moment.duration(Day1.diff(now));
+    
+    // Форматируем числа с ведущими нулями
+    const happi = formatNumber(dure.months());
+    const happi1 = formatNumber(dure.days());
+    const happi2 = formatNumber(dure.hours());
+    const happi3 = formatNumber(dure.minutes());
+    const happi4 = formatNumber(Math.floor(dure.seconds()));
+
+    const happi5 = formatNumber(dure1.months());
+    const happi6 = formatNumber(dure1.days());
+    const happi7 = formatNumber(dure1.hours());
+    const happi8 = formatNumber(dure1.minutes());
+    const happi9 = formatNumber(Math.floor(dure1.seconds()));
+
+    // Обновляем элементы
+    document.getElementById('h2_1').textContent = happi;
+    document.getElementById('h2_2').textContent = happi1;
+    document.getElementById('h2_3').textContent = happi2;
+    document.getElementById('h2_4').textContent = happi3;
+    document.getElementById('h2_5').textContent = happi4;
+
+    document.getElementById('h2_11').textContent = happi5;
+    document.getElementById('h2_22').textContent = happi6;
+    document.getElementById('h2_33').textContent = happi7;
+    document.getElementById('h2_44').textContent = happi8;
+    document.getElementById('h2_55').textContent = happi9;
+  }
+  
+  // Запускаем сразу и затем каждую секунду
+  Now_Day();
+  setInterval(Now_Day, 1000);
+</script>
+
+</body>
+</html>
